@@ -1,0 +1,461 @@
+/* Seção de Resumo */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 20px;
+  background-color: #f4f4f4;
+}
+
+#app {
+  max-width: 1200px;
+  margin: 0 auto;
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+
+/* Estilos para o modal de confirmação */
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  max-width: 400px;
+  width: 100%;
+  text-align: center;
+}
+
+.modal-buttons {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.modal-buttons button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+#confirm-delete {
+  background-color: #ff4d4d;
+  color: white;
+}
+
+#confirm-delete:hover {
+  background-color: #ff1a1a;
+}
+
+#cancel-delete {
+  background-color: #f0f0f0;
+  color: #333;
+}
+
+#cancel-delete:hover {
+  background-color: #ddd;
+}
+/* seção de resumo*/
+.summary {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-bottom: 20px;
+  }
+  
+  .summary-item {
+    display: flex;
+    align-items: center;
+    background-color: #f9f9f9;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .summary-item i {
+    font-size: 24px;
+    margin-right: 15px;
+    color: #28a745;
+  }
+  
+  .summary-item span {
+    display: block;
+    font-size: 14px;
+    color: #666;
+  }
+  
+  .summary-item strong {
+    font-size: 24px;
+    color: #333;
+  }
+  
+  /* Barra de Pesquisa */
+  .search-bar {
+    display: flex;
+    margin-bottom: 20px;
+  }
+  
+  .search-bar input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px 0 0 4px;
+  }
+  
+  .search-bar button {
+    padding: 10px 15px;
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+    border-radius: 0 4px 4px 0;
+    cursor: pointer;
+  }
+  
+  .search-bar button:hover {
+    background-color: #218838;
+  }
+  
+  /* Tabela de Itens */
+  #inventory-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+  }
+  
+  #inventory-table th,
+  #inventory-table td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  #inventory-table th {
+    background-color: #f9f9f9;
+    color: #333;
+  }
+  
+  #inventory-table tbody tr:hover {
+    background-color: #f1f1f1;
+  }
+  
+  /* Status */
+  .status {
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: bold;
+  }
+  
+  .status.in-stock {
+    background-color: #d4edda;
+    color: #155724;
+  }
+  
+  .status.low-stock {
+    background-color: #fff3cd;
+    color: #856404;
+  }
+  
+  .status.out-of-stock {
+    background-color: #f8d7da;
+    color: #721c24;
+  }
+
+  .add-item-form {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .add-item-form h2 {
+    margin-bottom: 15px;
+    color: #333;
+  }
+  
+  .add-item-form form {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .add-item-form input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .add-item-form button {
+    padding: 10px 15px;
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .add-item-form button:hover {
+    background-color: #218838;
+  }
+
+  #update-sales {
+    background: none;
+    border: none;
+    color: #28a745;
+    cursor: pointer;
+    margin-left: 10px;
+  }
+  
+  #update-sales:hover {
+    color: #218838;
+  }
+  
+  /* Botões de Ação na Tabela */
+  .action-buttons {
+    display: flex;
+    gap: 5px;
+  }
+  
+  /* Estilos para quando não há dados */
+.no-data {
+  text-align: center;
+  padding: 20px;
+  color: #666;
+  font-style: italic;
+}
+
+/* Estilos para o botão de deletar */
+.action-buttons .delete {
+  background-color: #dc3545;
+  color: white;
+  
+}
+
+.action-buttons .delete:hover {
+  background-color: #c82333;
+}
+.action-buttons button {
+    padding: 5px 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 12px;
+}
+  
+.action-buttons button.low-stock {
+    background-color: #fff3cd;
+    color: #856404;
+  }
+  
+  .action-buttons button.out-of-stock {
+    background-color: #f8d7da;
+    color: #721c24;
+  }
+  
+  .action-buttons button:hover {
+    opacity: 0.8;
+  }
+
+  .action-buttons button.edit {
+    background-color: #007bff;
+    color: #fff;
+}
+
+.action-buttons button.edit:hover {
+    background-color: #0056b3;
+}
+/* Mensagens de erro e sucesso */
+.error-message,
+.success-message {
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 4px;
+    text-align: center;
+}
+
+.error-message {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+.success-message {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+/* Paginação */
+.pagination {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.pagination button {
+    padding: 5px 10px;
+    border: 1px solid #ddd;
+    background-color: #fff;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.pagination button:disabled {
+    background-color: #f4f4f4;
+    cursor: not-allowed;
+}
+
+.pagination button.active {
+    background-color: #28a745;
+    color: white;
+    border-color: #28a745;
+}
+/* Modal de Edição */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  max-width: 400px;
+  width: 100%;
+}
+
+.modal-content h2 {
+  margin-bottom: 15px;
+  color: #333;
+}
+
+.modal-content form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.modal-content input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.modal-content button {
+  padding: 10px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.modal-content button[type="button"] {
+  background-color: #6c757d;
+}
+
+.modal-content button:hover {
+  opacity: 0.8;
+}
+/* Loading state */
+.loading {
+    text-align: center;
+    padding: 20px;
+    color:#666;
+}
+
+.loading:after {
+    content: '';
+    animation: dots 1s steps(5, end) infinite;
+}
+
+@keyframes dots {
+    0%, 20% { content: '.'; }
+    40% { content: '..'; }
+    60% { content: '...'; }
+    80% { content: '....'; }
+    100% { content: '.....'; }
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  /* Ajustes para tablets e celulares */
+  .summary {
+      grid-template-columns: repeat(2, 1fr); /* 2 colunas em telas menores */
+  }
+
+  #inventory-table {
+      display: block;
+      overflow-x: auto; /* Adiciona scroll horizontal em telas pequenas */
+  }
+
+  .add-item-form form {
+      flex-direction: column; /* Formulário em coluna em telas pequenas */
+  }
+
+  .action-buttons {
+      flex-direction: column; /* Botões de ação em coluna em telas pequenas */
+  }
+}
+
+@media (max-width: 480px) {
+  /* Ajustes para celulares */
+  .summary {
+      grid-template-columns: 1fr; /* 1 coluna em telas muito pequenas */
+  }
+
+  .search-bar {
+      flex-direction: column; /* Barra de pesquisa em coluna */
+      gap: 10px;
+  }
+
+  .search-bar input {
+      border-radius: 4px;
+  }
+
+  .search-bar button {
+      border-radius: 4px;
+  }
+
+  #inventory-table th,
+  #inventory-table td {
+      padding: 8px; /* Reduz o padding em telas pequenas */
+  }
+
+  .add-item-form input,
+  .add-item-form button {
+      width: 100%; /* Inputs e botões ocupam 100% da largura */
+  }
+}

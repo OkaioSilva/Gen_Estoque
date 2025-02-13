@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gerenciador de Estoque</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div id="app">
+        <h1>Painel de Estoque</h1>
+      <!-- Seção de Resumo -->
+      <div class="summary">
+          <div class="summary-item">
+            <i class="fas fa-boxes"></i>
+              <div>
+                <span>Total de Itens</span>
+                  <strong id="total-items">0</strong>
+              </div>
+          </div>
+          <div class="summary-item">
+            <i class="fas fa-exclamation-triangle"></i>
+              <div>
+                <span>Baixo Estoque</span>
+                <strong id="low-stock-items">0</strong>
+              </div>
+          </div>
+          <div class="summary-item">
+              <i class="fas fa-times-circle"></i>
+                <div>
+                  <span>Fora de Estoque</span>
+                  <strong id="out-of-stock-items">0</strong>
+                </div>
+          </div>
+    </div>
+
+    <!-- Barra de Pesquisa -->
+    <div class="search-bar">
+      <input type="text" id="search-input" placeholder="Pesquisar estoque...">
+      <button id="search-button"><i class="fas fa-search"></i></button>
+    </div>
+
+    <!-- Tabela de Itens -->
+    <table id="inventory-table">
+      <thead>
+        <tr>
+          <th>Nome do Item</th>
+          <th>Quantidade</th>
+          <th>Status</th>
+          <th>Última Atualização</th>
+          <th>Ações</th>
+        </tr>
+      </thead>
+      <tbody id="table-body">
+        <!-- Itens serão adicionados dinamicamente aqui -->
+      </tbody>
+    </table>
+
+    <!-- Formulário para Adicionar Itens -->
+    <div class="add-item-form">
+      <h2>Adicionar Item</h2>
+      <form id="add-item-form">
+        <input type="text" id="item-name" placeholder="Nome do Item" required>
+        <input type="number" id="item-quantity" placeholder="Quantidade" required>
+        <button type="submit"><i class="fas fa-plus"></i> Adicionar</button>
+      </form>
+    </div>
+    
+    <div id="pagination" class="pagination"></div>
+  </div>
+    <!-- Modal de Confirmação -->
+    <div id="confirmation-modal" class="modal" style="display: none;">
+      <div class="modal-content">
+          <h2>Confirmar Exclusão</h2>
+          <p>Tem certeza que deseja deletar este item?</p>
+          <div class="modal-buttons">
+              <button id="confirm-delete">Sim, Deletar</button>
+              <button id="cancel-delete">Cancelar</button>
+          </div>
+      </div>
+  </div>
+  <script type="module" src="./script.js"></script>
+</body>
+</html>
+

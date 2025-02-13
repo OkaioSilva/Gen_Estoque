@@ -1,0 +1,5 @@
+# Dependências do Node.js
+node_modules/
+
+# Arquivos de ambiente (não commitar credenciais)
+.env 
